@@ -1,4 +1,4 @@
-package tel_bennkyoukai;
+package benkyokai;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package tel_bennkyoukai;
+package benkyokai;
 
 import java.util.HashMap;
 import java.util.List;
