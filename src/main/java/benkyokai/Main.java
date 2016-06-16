@@ -33,39 +33,51 @@ public class Main {
 	
 	List<Student> students = Arrays.asList(student1, student2, student3, student4, student5);
 	
-	System.out.println("学生のリストを表示");
+	System.out.println("01, 学生のリストを表示してください");
 	//拡張for文
 	for(Student student : students) {
 		System.out.println(student.toString());
 	}
-	//forEach を使って書いてみる
+	//forEach を使って書いてみる　(匿名メソッド)
 //	students.forEach(new Consumer<Student>(){
-//		@Override
-//	...
+//			... //実装するメソッド名は accept, 戻り値なし, 引数は Student 型)
 //	});
-	//ラムダ式を使って書いてみる
+	//forEach を使って書いてみる　(ラムダ式)
 //	students.forEach(student -> 
 //	...
 
-	System.out.println("英語の点数が80点以上の生徒はいますか？");
-	boolean exists = false;
+	System.out.println("02, 英語の点数が80点以上の生徒はいますか？");
+	boolean exists;
 //	exists = students.stream()
+//			.anyMatch(student -> {
 //			...
-	System.out.println(exists);
+//	System.out.println(exists);
 	
-	System.out.println("数学の平均点は？");
-	double ave = 0;
-//	dve = students.stream()
-//			...	
-	System.out.println(ave);
-
-	System.out.println("2016年入学で数学の点数順に並べられた生徒の名前のリストは？");
-	List<String> studentsOrderByPerformanceOfMath = new ArrayList<>();
-//	studentsOrderByPerformanceOfMath = students.stream()
-//			...;
+	System.out.println("03, 数学の最高点をとったのは誰ですか？");
+	Student st;
+//	st = students.stream()
+//			.collect(Collectors.maxBy((st1, st2) -> {
+//				...
+//	System.out.println(st);
 	
-	studentsOrderByPerformanceOfMath.forEach(student -> System.out.println(student));
+	System.out.println("04, 科目情報を取り除き、名前と学籍番号だけのリストを作ってください");
+	List<Pair<String, String>> list01 = new ArrayList<>();
+//	list01 = students.stream()
+//			.map(student -> {
+//				...			
+//	list01.forEach(pair -> System.out.println(pair.toString()));
+	
+	System.out.println("05, 2016年入学で,数学の点数順に並べられた,生徒の名前のリストを作ってください");
+	List<String> list02 = new ArrayList<>();
+//	list02 = students.stream()
+//			...
+//	list03.forEach(name -> System.out.println(name));	
 
-	}
+	System.out.println("EX, 3科目以上受講している人の名前と平均点のリストを作ってください");
+	List<Pair<String, Double>> listEX = new ArrayList<>(); //余裕のある人は List<Pair<String, Double>> ではなく Map<String, Double> にしてみましょう
+//	listEX = students.stream()
+//			...
+//	listEX.forEach(pair -> System.out.println(pair.toString()));
+    }
 }
 
