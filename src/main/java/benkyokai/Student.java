@@ -3,7 +3,9 @@ package benkyokai;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
+import org.apache.commons.lang3.tuple.Pair;
 
 public class Student {
 	private String name;
@@ -50,7 +52,7 @@ public class Student {
 		});
 	}
 
-	public Map<String, Integer> getPerformancies() {
+	public Map<String, Integer> getPerformances() {
 		return performancies;
 	}
 	
@@ -62,6 +64,10 @@ public class Student {
 		}	
 	}
 
+    public void setPerformances(Pair<String, Integer>... performances) {
+	    Stream.of(performances).forEach(p -> this.setPerformance(p.getKey(), p.getValue()));
+	}
+	
 	@Override
 	public String toString() {
 		return "Student [name=" + name + ", no=" + no + ", lessons=" + lessons + ", performancies=" + performancies
